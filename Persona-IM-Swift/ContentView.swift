@@ -9,12 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            Color.personaRed
-                .ignoresSafeArea()
-        }
-    }
+        // Adjust for Android Layout
+        ZStack(alignment: .topLeading){
+            // Background
+            Image(ImageResource.Res.bgSplatterBackground)
+                .resizable()
+                .frame(maxWidth: .infinity)
 
+            Image(ImageResource.Res.logoIm)
+                .resizable()
+                .scaledToFit()
+                .frame(height: 100)
+                .safeAreaPadding(.top)
+                .offset(x: 8,y: -4)
+                // dp can't convert to pt. But ignore for ease.
+        }.background(.red)
+    }
 }
 
 #Preview {
