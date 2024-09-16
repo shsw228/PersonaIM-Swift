@@ -12,8 +12,7 @@ struct Message: Equatable, Hashable {
     let sender: Sender
     let text: String
 }
-
-enum Sender {
+enum Sender: CaseIterable {
     case Ann
     case Ryuji
     case Yusuke
@@ -45,6 +44,8 @@ enum Sender {
     }
 
 }
+
+
 
 class MessagesState {
     private var count = 0
@@ -83,7 +84,7 @@ class MessagesState {
         ),
         Message(
             sender:Sender.Ren,
-            text:"Morgana, I choose you. Morgana, I choose you.Morgana, I choose you."
+            text:"Morgana, I choose you. "
         ),
         Message(
             sender:Sender.Ann,
